@@ -1,0 +1,135 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/28/2024  11:29:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE STARTUP.obj, onof.obj TO onanoff RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  onof.obj (ONOF)
+
+
+LINK MAP OF MODULE:  onanoff (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0019H     UNIT         ?PR?_DELAY?ONOF
+            CODE    0819H     0014H     UNIT         ?PR?MAIN?ONOF
+            CODE    082DH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   onanoff (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ONOF
+
+?PR?MAIN?ONOF
+  +--> ?PR?_DELAY?ONOF
+
+
+
+SYMBOL TABLE OF MODULE:  onanoff (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:082DH         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/28/2024  11:29:33  PAGE 2
+
+
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0830H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:082DH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:082DH         LINE#         133
+  C:082FH         LINE#         134
+  C:0830H         LINE#         135
+  C:0831H         LINE#         136
+  C:0833H         LINE#         185
+  C:0836H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ONOF
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0804H         PUBLIC        _delay
+  C:0819H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0819H         LINE#         3
+  C:0819H         LINE#         4
+  C:0819H         LINE#         5
+  C:0819H         LINE#         6
+  C:0819H         LINE#         7
+  C:081CH         LINE#         8
+  C:081FH         LINE#         9
+  C:0822H         LINE#         10
+  C:0825H         LINE#         11
+  C:0828H         LINE#         12
+  C:082BH         LINE#         13
+  -------         ENDPROC       MAIN
+  C:0800H         SYMBOL        L?0013
+  -------         PROC          L?0012
+  -------         ENDPROC       L?0012
+  C:0800H         SYMBOL        L?0013
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        a
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0804H         LINE#         14
+  C:0804H         LINE#         15
+  C:0804H         LINE#         17
+  C:080DH         LINE#         18
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/28/2024  11:29:33  PAGE 3
+
+
+  C:080DH         LINE#         19
+  C:0811H         LINE#         20
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        ONOF
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003CH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=60
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
